@@ -1,198 +1,196 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background: #000 url(img/img1.jpg) no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-family: "Montserrat", sans-serif;
-    text-decoration: none;
-    outline: none;
-}
-
-html {
-    height: 100%;
+    margin: auto;
+    width: 80%;
 }
 
 header {
-    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-    flex: 0 0 auto;
-}
-
-main {
-    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
-    flex: 1 0 auto;
-}
-
-footer {
-    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-    flex: 0 0 auto;
-}
-
-.header {
-    width: 1260px;
-    margin: 0 auto;
-}
-
-.main {
-    width: 1260px;
-    margin: 0 auto;
-    background: white;
-    height: max-content;
-    opacity: 97%;
-}
-
-.mainContainer {
-    width: 1180px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.footer {
-    width: 1260px;
-    margin: 0 auto;
-    background: #133115;
-    height: 50px;
-    margin-bottom: 40px;
-}
-
-.header__top {
-    height: 50px;
-    background: #133115;
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.header__bottom {
-    height: 70px;
-    border: 1px grey solid;
-    background: gainsboro;
-}
-
-.header__top_input {
-    width: 600px;
-    height: 20px;
-    border-radius: 10px;
-    margin-left: 60px;
-    padding: 5px 10px 5px 10px;
-    border: none;
-    font-family: "Montserrat", sans-serif;
-    color: darkred;
-}
-
-.header__p {
-    color: white;
-    padding-left: 15px;
-}
-
-.header__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__bottom_list {
-    display: flex;
-    justify-content: space-around;
-    width: 1000px;
-    list-style-type: none;
-}
-
-.header__bottom_link {
-    color: grey;
-    font-family: "Montserrat", sans-serif;
-    font-size: 25px;
-    line-height: 70px;
-    text-decoration: none;
-    padding: 0 50px 0 50px;
-    text-transform: uppercase;
-}
-
-.header__bottom_link:hover {
-    color: whitesmoke;
-    background: grey;
+    background: lightgrey;
+    max-width: 100%;
+    min-height: 80px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    position: relative;
 }
 
 .cart-button {
-    margin-right: 80px;
-    width: 200px;
-    border-radius: 50px;
-    color: whitesmoke;
-    background: #133115;
-    text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    font-size: 25px;
-    border: none;
-    box-shadow: 2px 2px grey;
+    position: absolute;
+    right: 35px;
+    top: 18px;
+    width: 140px;
+    height: 40px;
+    border: 0.1px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #706B65 inset, 0 0 0 0 #706B65;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    transition: .15s ease-in-out;
 }
 
 .cart-button:hover {
-    background: darkred;
-    box-shadow: none;
-}
+    box-shadow: 0 0 10px 0 #FF4500 inset, 0 0 10px 4px #FF4500;
+    color: #FF4500;
+    cursor: pointer;
+  }
 
-.footer__text {
-    color: whitesmoke;
-    margin-left: 60px;
-    line-height: 50px;
-}
-
-.product-title {
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    color: grey;
-    text-align: center;
-    margin: 10px 0 5px 0;
-}
-
-.product-price {
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    color: darkred;
-    text-align: center;
-    margin: 10px 0 5px 0;
-}
-
-.product-item:hover {
-    transform: scale(1.05);
+.goods-list {
+    margin-top: 20px;
+    margin: 20px auto auto;
+    max-width: 80%;
+    box-shadow: 0 0 10px 5px grey inset, 0 0 0 0 grey;
+    min-height: 400px;
+    border-radius: 15px;
 }
 
 .product-item {
+    float: left;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 200px;
+    min-width: 27%;
+    height: 130px;
     text-align: center;
-    text-decoration: none;
-    transition: 1s;
-    width: auto;
-    height: 260px;
-    border: grey 1px solid;
-    margin: 20px;
-    border-radius: 15px;
 }
 
-.by-btn {
-    width: 120px;
-    height: 30px;
-    border-radius: 15px;
-    color: whitesmoke;
-    background: #133115;
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif;
-    border: none;
-    box-shadow: 2px 2px grey;
+.goods-item h5 {
+    margin-top: 10px;
 }
 
-.by-btn:hover {
-    background: darkred;
-    box-shadow: none;
+.basket {
+    width: 100%;
 }
 
-.product-img {
-    border-radius: 15px 15px 0 0;
+.addButton,
+.removeButton {
+    border-radius: 3px;
+    background-color: transparent;
+    letter-spacing: 2px;
+    transition: .15s ease-in-out;
+}
+
+.addButton {
+    border: 0px solid green;
+    color: green;
+}
+
+.removeButton {
+    border: 0px solid darkred;
+    color: red;
+}
+
+.addButton:hover {
+    box-shadow: 0 0 5px 0 lightgreen inset, 0 0 5px darkgreen;
+    color: darkgreen;
+    cursor: pointer;
+  }
+
+.removeButton:hover {
+    box-shadow: 0 0 5px 0 #DB5E5E inset, 0 0 5px #970000;
+    color: darkred;
+    cursor: pointer;
+}
+
+.basket-item {
+    text-align: center;
+}
+
+
+
+.form-wrapper {
+	background-color: #f6f6f6;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eae8e8));
+	background-image: -webkit-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -moz-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -ms-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -o-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+	border-color: #dedede #bababa #aaa #bababa;
+	border-style: solid;
+	border-width: 1px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	margin: 100px auto;
+	overflow: hidden;
+	padding: 8px;
+	width: 450px;
+}
+
+.form-wrapper #search {
+	border: 1px solid #CCC;
+	-webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+  color: #999;
+	float: left;
+	font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+	height: 20px;
+	padding: 10px;
+	width: 320px;
+}
+
+.form-wrapper #search:focus {
+	border-color: #aaa;
+	-webkit-box-shadow: 0 1px 1px #bbb inset;
+	-moz-box-shadow: 0 1px 1px #bbb inset;
+	box-shadow: 0 1px 1px #bbb inset;
+	outline: 0;
+}
+
+.form-wrapper #search:-moz-placeholder,
+.form-wrapper #search:-ms-input-placeholder,
+.form-wrapper #search::-webkit-input-placeholder {
+	color: #999;
+	font-weight: normal;
+}
+
+
+/* Стили для поля поиска  */
+.form-wrapper #submit {
+	background-color: #353c3d;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d6e3e5), to(#353c3d));
+	background-image: -webkit-linear-gradient(top, #d6e3e5, #353c3d);
+	background-image: -moz-linear-gradient(top, #d6e3e5, #353c3d);
+	background-image: -ms-linear-gradient(top, #d6e3e5, #353c3d);
+	background-image: -o-linear-gradient(top, #d6e3e5, #353c3d);
+	background-image: linear-gradient(top, #d6e3e5, #353c3d);
+	border: 1px solid #00748f;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+	color: #fafafa;
+	cursor: pointer;
+	height: 42px;
+	float: right;
+	font: 15px Arial, Helvetica;
+	padding: 0;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
+	width: 100px;
+}
+
+.form-wrapper #submit:hover,
+.form-wrapper #submit:focus {
+	background-color: #31b2c3;
+}
+
+.form-wrapper #submit:active {
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	outline: 0;
+}
+
+.form-wrapper #submit::-moz-focus-inner {
+	border: 0;
 }
