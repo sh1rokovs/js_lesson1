@@ -2,41 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
-    <link href="style.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7aae2eb976.js" crossorigin="anonymous"></script>
+    <title>Магазин</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header__top">
-            <div class="header__topInput">
-                <input type="text" class="header__top_input">
-            </div>
-            <div>
-                <p class='header__p'>Найти</p>
-            </div>
-        </div>
-        <div class="header__bottom">
-            <div class="header__bottomMenu">
-                <ul class="header__bottom_list">
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Главная</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Меню</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Поддержка</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Мы</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Контакты</li></a>
-                </ul>
-            </div>
-            <div class="header__bottomButton">
-                <button class="cart-button">Корзина</button>
-            </div>
+<div id="app">
+    <header>
+        <div class="logo">Магазин</div>
+        <div class="cart">
+            
+            <form action="#" class="search-form" @submit.prevent="filter">
+                <searchform v-model="userSearch" id="search-template"></searchform>
+                <button class="btn-search" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+            <cart
+                :cart-items="cartItems"
+                :img="imgCart"
+                :visibility="showCart"
+                @remove="remove">
+            </cart>
         </div>
     </header>
-    <main class="main">
-        <div class="mainContainer"></div>
+    <main>
+        <products 
+            :products="filtered" 
+            :img="imgCatalog" 
+            @add-product="addProduct">
+        </products>
     </main>
-    <footer class="footer">
-        <p class="footer__text">	&#169;Защищено</p>
-    </footer>
-    <script src="script.js"></script>
+
+
+</div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/CartComp.js"></script>
+    <script src="js/ProdComp.js"></script>
+    <script src="js/search_comp.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
+
+<!--<div class="cart-item" data-id="${this.id_product}">-->
+<!--<div class="product-bio">-->
+<!--<img src="${this.img}" alt="Some image">-->
+<!--<div class="product-desc">-->
+<!--<p class="product-title">${this.product_name}</p>-->
+<!--<p class="product-quantity">Quantity: ${this.quantity}</p>-->
+<!--<p class="product-single-price">$${this.price} each</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="right-block">-->
+<!--<p class="product-price">${this.quantity*this.price}</p>-->
+<!--<button class="del-btn" data-id="${this.id_product}">&times;</button>-->
+<!--</div>-->
+<!--</div>-->
