@@ -7,16 +7,19 @@ const app = express();
 app.use(express.static('.'));
 app.use(bodyParser.json());
 
+// Get-запрос на получение информации о товарах
 app.get('/catalog', (req, res) => {
     fs.readFile('response.json', 'utf-8', (err, data) => {
         res.send(data);
     });
 });
+// Get-запрос на получение информации о корзине
 app.get('/cart', (req, res) => {
     fs.readFile('cart.json', 'utf-8', (err, data) => {
         res.send(data);
     });
 });
+// Post-запрос на получение информации о корзине
 app.post('/addToCard', (req, res) => {
     fs.readFile('cart.json', 'utf-8', (err, data) => {
         if(err) {
@@ -31,9 +34,11 @@ app.post('/addToCard', (req, res) => {
             } else {
                 res.send('{"result": 1}');
             }
+            // console.log('Скрипт выполнен: товар добавлен в массив');
         });
     });
 });
+// Post-запрос на получение информации о корзине
 app.post('/updateCart', (req, res) => {
     fs.readFile('cart.json', 'utf-8', (err, data) => {
         if(err) {
@@ -46,6 +51,7 @@ app.post('/updateCart', (req, res) => {
             } else {
                 res.send('{"result": 1}');
             }
+            // console.log('Скрипт выполнен: товар добавлен в массив');
         });
     });
 });
