@@ -1,0 +1,24 @@
+[{
+    "id": "5041",
+    "title": "Audi",
+    "price": 100000,
+    "img": "/img/audi.jpg"
+},
+{
+    "id": "2074",
+    "title": "Aston Martin",
+    "price": 50000,
+    "img": "/img/aston.jpeg"
+},
+{
+    "id": "3009",
+    "title": "Ferrari",
+    "price": 200000,
+    "img": "/img/ferrari.jpg"
+},
+{
+    "id": "5173",
+    "title": "Lamborghini",
+    "price": 250000,
+    "img": "/img/lamba.jpg"
+}]

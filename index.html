@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Shop</title>
-    <link href="style.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7aae2eb976.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Магазин</title>
+<link rel="stylesheet" href="css/stylevue.css">
+<script defer src="vue.min.js"></script>
+<script defer src="build.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="header__top">
-            <div class="header__topInput">
-                <input type="text" class="header__top_input">
+    <div id="app">
+        <header>
+            <div class="container">
+                <search></search>
+                <button class="cart-button" v-bind:class="{activebutton: isVisibleCart}" v-on:click="viewCart">Корзина<span>{{totalPriceCoin}}</span></button>
             </div>
-            <div>
-                <p class='header__p'>Найти</p>
-            </div>
-        </div>
-        <div class="header__bottom">
-            <div class="header__bottomMenu">
-                <ul class="header__bottom_list">
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Главная</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Меню</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Поддержка</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Мы</li></a>
-                    <a href="#" class="header__bottom_link"><li class="header__bottom_text">Контакты</li></a>
-                </ul>
-            </div>
-            <div class="header__bottomButton">
-                <button class="cart-button">Корзина</button>
-            </div>
-        </div>
-    </header>
-    <main class="main">
-        <div class="mainContainer"></div>
-    </main>
-    <footer class="footer">
-        <p class="footer__text">	&#169;Защищено</p>
-    </footer>
-    <script src="script.js"></script>
+        </header>
+        <main class="container">
+            <goods-list :goods="filteredGoods">
+                <template v-slot:title><h2>Продажа машин</h2></template>
+                <template v-slot:nothing v-if="filteredGoods.length == 0"><h3 class="goods-null">Товары не найдены</h3></template>
+            </goods-list>
+
+            <basket-list :goods="basketGoods" v-bind:class="{ active: isVisibleCart }">
+                <template v-slot:title><h2>Корзина</h2></template>
+                <template v-slot:totalCart><small class="totalCart">{{totalPriceMessage}}</small></template>
+            </basket-list>
+        </main>
+    </div>
 </body>
 </html>
